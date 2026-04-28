@@ -2,7 +2,7 @@ from openai import OpenAI
 from supabase import create_client
 
 SUPABASE_URL = "https://imzjqgnlphbddlrfocei.supabase.co"   # <-- reemplaza
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltempxZ25scGhiZGRscmZvY2VpIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NDgwNzU1MCwiZXhwIjoyMDkwMzgzNTUwfQ.Uiz3XStWqsKySAVsHwXLXLi_rbRtPxDo_E_q0-5lg_g"              # <-- usa service_role, no anon
+SUPABASE_KEY = os.getenv("SUPABASE_SECRET_KEY", "")              # <-- usa service_role, no anon
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
 sb = create_client(SUPABASE_URL, SUPABASE_KEY)
